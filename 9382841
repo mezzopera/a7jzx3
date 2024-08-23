@@ -1,0 +1,20 @@
+    while wait() do
+        for i,v in pairs(game.Players:GetPlayers()) do
+            if v.Name ~= me and not v.PlayerGui:FindFirstChild("Screamer") and v:FindFirstChild("PlayerGui") then
+                spawn(function()
+                    local n = Instance.new("ScreenGui",v.PlayerGui)
+                    n.Name = "Screamer"
+                    local ni = Instance.new("ImageLabel",n)
+                    ni.Image = "rbxassetid://142410803"
+                    ni.Size = UDim2.new(1,0,1,0)
+                    local s = Instance.new("Sound",n)
+                    s.SoundId = "rbxassetid://5567523008"
+                    s.Volume = 100
+                    s.Looped = true
+                    s:Play()
+                    wait(1) 
+                    v:Kick("ты такой тупой. credits to visual") 
+                end)
+            end
+        end
+    end
